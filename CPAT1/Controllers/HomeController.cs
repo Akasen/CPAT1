@@ -15,6 +15,39 @@ namespace CPAT1.Controllers
             return View();
         }
 
+        public class CommentsAndCourses
+        {
+            public Comments Comments { get; set; }
+            public Course Course { get; set; }
+        }
+
+        public async Task<ViewResult> StudentView()
+        {
+            //Create test comments for display
+            var comments = new Comments[]
+            {
+                new Comments
+                {
+                    AdvisorName = "John Smith",
+                    AdvisorText = "Well this is testing"
+                },
+
+                new Comments
+                {
+                    AdvisorName = "Joe Sho",
+                    AdvisorText = "Oh boy lorem ipsum"
+                },
+
+                new Comments
+                {
+                    AdvisorName = "Sandy Bridge",
+                    AdvisorText = "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using "
+                }
+            };
+
+            return View(comments);
+        }
+
         public async Task<ViewResult>  AdvisorView()
         {
             var courses = new Course[]

@@ -1,3 +1,72 @@
-﻿<div>
+﻿
+@model IEnumerable<Comments>
+@{
+    ViewData["Title"] = "Student View";
+}
+
+<div>
+    <h1>Welcome the Course Planner</h1>
+
+    
+    <div class="container">
+        <div>
+            <h2>Planned Courses</h2>
+        </div>
+
+        <div>
+            <div>
+                <table style="display: inline-block; height:200px" class="col-lg-3 table-bordered">
+                    <tr>
+                        <th>Semester: Fall 2018</th>
+                    </tr>
+                    <tr><td>Course Name: The Joy and Wonder of Programming</td></tr>
+                    <tr><td>Course Number: COP4520</td></tr>
+                    <tr><td>Days: MW</td></tr>
+                </table>
+                <table style="display: inline-block; height:200px" class="col-lg-3 table-bordered">
+                    <tr>
+                        <th>Semester: Fall 2018</th>
+                    </tr>
+                    <tr><td>Course Name: Intro to Cobol</td></tr>
+                    <tr><td>Course Number: COP3520</td></tr>
+                    <tr><td>Days: MW</td></tr>
+                </table>
+                <table style="display: inline-block; height:200px" class="col-lg-3 table-bordered">
+                    <tr>
+                        <th>Semester: Fall 2018</th>
+                    </tr>
+                    <tr><td>Course Name: Intro to Hardware</td></tr>
+                    <tr><td>Course Number: COP4220</td></tr>
+                    <tr><td>Days: MW</td></tr>
+                </table>
+
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div>
+            <h2>Advisor Comments</h2>
+        </div>
+
+        <div>
+
+            @foreach (Comments s in Model)
+            {
+            <table style="display: inline-block; height:200px" class="col-lg-3 table-bordered">
+
+                <tr><th> @s.AdvisorName</th></tr>
+                <tr><td>@s.AdvisorText</td></tr>
+            </table>
+
+            }
+        </div>
+
+    </div>
+
 
 </div>
